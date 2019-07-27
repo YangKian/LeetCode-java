@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2b15f2eb-c01f-4edc-a5d8-aa7ca720c52b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java.iml" beforeDir="false" afterPath="$PROJECT_DIR$/java.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/n118_Pascals_Triangle.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/n118_Pascals_Triangle.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/n26_remove_duplicates_from_sorted_arrays.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/n26_remove_duplicates_from_sorted_arrays.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/n27_Remove_Element.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/n27_Remove_Element.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/java/n977_Squares_of_a_Sorted_Array.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/java/n977_Squares_of_a_Sorted_Array.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -128,19 +121,19 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="282" />
-    <option name="y" value="11" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="580" />
+    <option name="y" value="180" />
     <option name="width" value="1400" />
     <option name="height" value="1000" />
   </component>
+  <component name="ProjectId" id="1OaR63jWcynq0AAGl1fjICdoFWj" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -158,6 +151,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -271,7 +265,9 @@
       <workItem from="1563868350051" duration="1829000" />
       <workItem from="1563892171127" duration="2289000" />
       <workItem from="1563943517569" duration="5986000" />
-      <workItem from="1564035173737" duration="3989000" />
+      <workItem from="1564035173737" duration="4504000" />
+      <workItem from="1564058249836" duration="1908000" />
+      <workItem from="1564120645102" duration="10000" />
     </task>
     <servers />
   </component>
@@ -287,13 +283,12 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14093000" />
+    <option name="totallyTimeSpent" value="16526000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2600536" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26675603" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -302,7 +297,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.34985834" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34985834" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.44867358" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -375,6 +370,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/n707_Design_Linked_List.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/test.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/SolutionTest.java" />
+    <entry file="file://$PROJECT_DIR$/../../../CodeWars/Java/CodeWars-Java/src/seven_kyu/Descending_Order.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -386,6 +386,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="946">
           <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/n160_Intersection_of_Two_Linked_Lists.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -414,44 +421,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="748">
           <caret line="34" column="28" selection-start-line="34" selection-start-column="28" selection-end-line="34" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/n160_Intersection_of_Two_Linked_Lists.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="24" column="9" lean-forward="true" selection-start-line="6" selection-start-column="8" selection-end-line="24" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/SolutionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="40" column="5" lean-forward="true" selection-start-line="7" selection-start-column="3" selection-end-line="40" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#188#189#0" expanded="true" />
-            <element signature="e#242#243#0" expanded="true" />
-            <element signature="e#288#289#0" expanded="true" />
-            <element signature="e#344#345#0" expanded="true" />
-            <element signature="e#390#391#0" expanded="true" />
-            <element signature="e#461#462#0" expanded="true" />
-            <element signature="e#507#508#0" expanded="true" />
-            <element signature="e#569#570#0" expanded="true" />
-            <element signature="e#615#616#0" expanded="true" />
-            <element signature="e#671#672#0" expanded="true" />
-            <element signature="e#717#718#0" expanded="true" />
-            <element signature="e#771#772#0" expanded="true" />
-            <element signature="e#817#818#0" expanded="true" />
-            <element signature="e#876#877#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
