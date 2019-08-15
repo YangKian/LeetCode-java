@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="" />
+    <list default="true" id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,7 +35,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../java/MyProfile/code/MyProfile" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -52,7 +54,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="7707af7f-e982-4119-a595-30cdd696c361" name="Default Changelist" comment="" />
+      <changelist id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="" />
       <created>1564909802246</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -62,6 +64,8 @@
       <workItem from="1565081896876" duration="3178000" />
       <workItem from="1565186881216" duration="1225000" />
       <workItem from="1565190153342" duration="618000" />
+      <workItem from="1565780254594" duration="800000" />
+      <workItem from="1565837670405" duration="2015000" />
     </task>
     <servers />
   </component>
@@ -73,7 +77,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
