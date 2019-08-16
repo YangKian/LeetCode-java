@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n198_House_Robber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n198_House_Robber.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +36,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../java/MyProfile/code/MyProfile" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -66,6 +67,8 @@
       <workItem from="1565190153342" duration="618000" />
       <workItem from="1565780254594" duration="800000" />
       <workItem from="1565837670405" duration="2015000" />
+      <workItem from="1565862513979" duration="15000" />
+      <workItem from="1565961049501" duration="1452000" />
     </task>
     <servers />
   </component>
