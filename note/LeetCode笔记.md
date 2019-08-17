@@ -316,3 +316,74 @@ class Solution {
   - 用preMax来存储上一次的总金额，用 curMax 来存储本次的总金额；
   - 在新的一轮循环中，preMax其实是第 i - 2 次的结果， curMax 其实是上一次的结果；
   - 使用两个变量代替了dp数组，使得空间复杂度降到了$O(1)$；
+
+
+
+### 167. 两数之和 II - 输入有序数组
+
+>给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。
+>
+>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。
+>
+>说明:
+>
+>返回的下标值（index1 和 index2）不是从零开始的。
+>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。
+>示例:
+>
+>输入: numbers = [2, 7, 11, 15], target = 9
+>输出: [1,2]
+>解释: 2 与 7 之和等于目标数 9 。因此 index1 = 1, index2 = 2 。
+>
+
+- 解法一：哈希表：
+
+```java
+public int[] twoSum(int[] numbers, int target) {
+    Map<Integer, Integer> map = new HashMap<>();
+    int[] result = new int[2];
+
+    for(int i = 0; i < numbers.length; ++i) {
+        int v = target - numbers[i];
+        if(map.containsKey(v)) {
+            result[0] = map.get(v) + 1;
+            result[1] = i + 1;
+        } else {
+            map.put(numbers[i], i);
+        }
+    }
+        return result;
+    }
+```
+
+- 思路：
+  - 哈希表存储目标与当前值之差的下标，方便快速查找；
+  - 存在的问题：哈希表本身封装了太多方法，虽然新增和查找都是常数时间复杂度，但还是有开销，除此之外，哈希表中放的是Integer而不是Int，这个封装的过程也会耗时
+  - 时间复杂度：$O(n)$，空间复杂度：$O(n)$；
+- 解法二：双指针法：
+
+```java
+public int[] twoSum1(int[] numbers, int target) {
+        int i = 0, j = numbers.length - 1;
+
+        while(i < j) {
+            int sum = numbers[i] + numbers[j];
+
+            if(sum < target) {
+                while(i++ < j && numbers[i] == numbers[i - 1]) {};
+//注意，要先算i++ < j，否则后续的numbers[i - 1]可能会越界，下个条件类似，要先算 i < j--
+            } else if (sum > target) {
+                while(i < j-- && numbers[j] == numbers[j + 1]) {};
+            } else {
+                return new int[]{i + 1, j + 1};
+            }
+        }
+        return new int[]{0, 0};
+    }
+```
+
+- 思路：
+  - 利用数组有序的条件，从头和尾开始同时遍历；
+  - 在双指针自增减的同时跳过重复元素，加快遍历速度；
+  - 时间复杂度：$O(n)$，空间复杂度$O(1)$；
+
