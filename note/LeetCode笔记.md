@@ -387,3 +387,169 @@ public int[] twoSum1(int[] numbers, int target) {
   - 在双指针自增减的同时跳过重复元素，加快遍历速度；
   - 时间复杂度：$O(n)$，空间复杂度$O(1)$；
 
+
+
+### 647.回文子串
+
+> 给定一个字符串，你的任务是计算这个字符串中有多少个回文子串。
+>
+> 具有不同开始位置或结束位置的子串，即使是由相同的字符组成，也会被计为是不同的子串。
+>
+> 示例 1:
+>
+> 输入: "abc"
+> 输出: 3
+> 解释: 三个回文子串: "a", "b", "c".
+> 示例 2:
+>
+> 输入: "aaa"
+> 输出: 6
+> 说明: 6个回文子串: "a", "a", "a", "aa", "aa", "aaa".
+> 注意:
+>
+> 输入的字符串长度不会超过1000。
+
+- 解法一：动态规划
+
+```java
+ public int countSubstrings(String s) {
+        final int size = s.length();
+        if(s == null || size == 0) return 0;
+        
+        boolean[][] dp = new boolean[size][size];
+        int count = 0;
+        
+        for(int i = size - 1; i >=0; --i) {
+            for(int j = i; j < size; ++j) {
+                if(i == j) {
+                    dp[i][j] = true;
+                } 
+                else if(i + 1 == j) {
+                    dp[i][j] = s.charAt(i) == s.charAt(j);
+                } else {
+                    dp[i][j] = s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1];
+                }
+                if(dp[i][j]) ++count;
+            }
+        }
+        return count;
+    }
+```
+
+- 思路：
+  - 构造一个二维数组来存储子结果；
+  - 以`s[i][j]`表示一个字符串，i，j为字符下标，则有以下几种情况：
+    - 当 i == j 时，`s[i][j]`必然是回文；
+    - 当i，j相邻，即 i + 1 == j 时，`s[i][j]`是否是回文取决于s.charAt(i)是否等于s.charAt(j)；
+    - 除了以上两种情况外，`s[i][j]`是否是回文需要判断两个条件：
+      - s.charAt(i)是否等于s.charAt(j);
+      - 子结果`d[i + 1][j - 1]`是否是回文；
+  - 注意，题中 i 要从字符串最右侧开始递减；
+  - 时间复杂度：$O(n^2)$，空间复杂度 $O(n^2)$；
+- 解法二：中心扩展法
+
+```java
+    public int countSubstrings(String s) {
+        final int size = s.length();
+        if(s == null || size == 0) return 0;
+        
+        int result = 0;
+        for(int i = 0; i < size; ++i) {
+            result += expand(s, i, i);
+            result += expand(s, i, i + 1);
+        }
+        return result;
+    }
+    
+    private int expand(String s, int left, int right) {
+        int count = 0;
+        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            ++count;
+            --left;
+            ++right;
+        }
+        return count;
+    }
+```
+
+- 思路：
+  - 找到一个字符，以其为中心，分别向左右扩展，判断扩展后的字符串是否为回文；
+  - 注意分两种情况：
+    - 若字符串的字符数为奇数个，则中心元素是字符；
+    - 若字符串的字符数为偶数个，则中心元素是中心线，此时中心其实为 i 和 i+1 两个相邻字符；
+  - 时间复杂度：$O(n^2)$， 空间复杂度：$O(1)$；
+
+
+
+### 5.最长回文子串
+
+> 给定一个字符串 s，找到 s 中最长的回文子串。你可以假设 s 的最大长度为 1000。
+>
+> 示例 1：
+>
+> 输入: "babad"
+> 输出: "bab"
+> 注意: "aba" 也是一个有效答案。
+> 示例 2：
+>
+> 输入: "cbbd"
+> 输出: "bb"
+
+- 解法一：动态规划
+
+```java
+    public String longestPalindrome(String s) {
+        final int size = s.length();
+        if(s == null || size == 0) return "";
+        int start = 0, maxlen = 0;
+        boolean[][] dp = new boolean[size][size];
+        
+        for(int i = size - 1; i >= 0; --i) {
+            for(int j = i; j < size; ++j) {
+                if(i == j) {
+                    dp[i][j] = true;
+                } else if(i + 1 == j) {
+                    dp[i][j] = s.charAt(i) == s.charAt(j);
+                } else {
+                    dp[i][j] = s.charAt(i) == s.charAt(j) && dp[i + 1][j - 1];
+                }
+                
+                if(dp[i][j] && j - i + 1> maxlen) {
+                    start = i;
+                    maxlen = j - i + 1;
+                }
+            }
+        }
+        return s.substring(start, start + maxlen);
+    }
+```
+
+- 思路：
+  - 与第647题目一样，只是多记录了最长子串的起始位置和长度
+- 解法二：中心扩展法
+
+```java
+    public String longestPalindrome(String s) {
+        int maxlen = 0, start = 0;
+        for(int i = 0; i < s.length(); ++i) {
+            int len1 = expand(s, i, i);
+            int len2 = expand(s, i, i + 1);
+            int len = Math.max(len1, len2);
+            
+            if(len > maxlen) {
+                maxlen = len;
+                start = i - (len - 1 >> 1); //当前的字符串长度i减去回文字符串长度的一半，即是起点
+            }
+        }
+        return s.substring(start, start + maxlen);
+    }
+    
+    private int expand(String s, int left, int right) {
+        while(left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            ++right;
+            --left;
+        }
+        return right - left - 1; //((right - 1) - (left + 1) + 1)
+    }
+```
+
