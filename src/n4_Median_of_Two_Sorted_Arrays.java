@@ -3,7 +3,7 @@ public class n4_Median_of_Two_Sorted_Arrays {
     //解法一
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
         int totalLen = nums1.length + nums2.length;
-        if((totalLen & 1) == 1) {
+        if((totalLen & 1) == 1) { //totalLen & 1 == 1 说明totalLen是奇数
             return findKthSortedArrays(nums1, nums2, (totalLen>> 1) + 1);
         } else {
             double a = findKthSortedArrays(nums1, nums2, (totalLen >> 1));
