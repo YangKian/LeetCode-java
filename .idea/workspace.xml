@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n4_Median_of_Two_Sorted_Arrays.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n4_Median_of_Two_Sorted_Arrays.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/LeetCode笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/note/LeetCode笔记.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,6 +73,9 @@
       <workItem from="1566203805766" duration="1420000" />
       <workItem from="1566277742315" duration="665000" />
       <workItem from="1566387213708" duration="1892000" />
+      <workItem from="1566403392052" duration="31000" />
+      <workItem from="1566435973344" duration="18000" />
+      <workItem from="1566472794530" duration="1943000" />
     </task>
     <servers />
   </component>
