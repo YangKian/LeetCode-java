@@ -629,3 +629,51 @@ public int[] twoSum1(int[] numbers, int target) {
 
 
 
+### 240. 搜索二维矩阵II
+
+>编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target。该矩阵具有以下特性：
+>
+>每行的元素从左到右升序排列。
+>每列的元素从上到下升序排列。
+>示例:
+>
+>现有矩阵 matrix 如下：
+>
+>[
+>  [1,   4,  7, 11, 15],
+>  [2,   5,  8, 12, 19],
+>  [3,   6,  9, 16, 22],
+>  [10, 13, 14, 17, 24],
+>  [18, 21, 23, 26, 30]
+>]
+>给定 target = 5，返回 true。
+>
+>给定 target = 20，返回 false。
+>
+
+- 解法：
+
+```java
+public boolean searchMatrix(int[][] matrix, int target) {
+    if(matrix == null || matrix.length == 0 || matrix[0] == null || matrix[0].length == 0) {
+            return false;
+        }
+
+    int i = 0, j = matrix[0].length - 1;
+    while(i < matrix.length && j >= 0) {
+        if(target < matrix[i][j]) {
+            --j;
+        } else if (target > matrix[i][j]) {
+            ++i;
+        } else {
+            return true;
+        }
+    }
+    return false;
+}
+```
+
+- 思路：
+  - 观察规律有：当元素为矩阵中最右上角的数时，该数是其所在列中最小的数，也是其所在行中最大的数；
+  - 由此，从右上角开始，如果目标值小于右上角的元素，则其所在列前移，如果目标值大于右上角的元素，则其所在行下移；
+  - 时间复杂度：$O(m + n)$, m 和 n 是行和列的维度；空间复杂度：$O(1)$；
