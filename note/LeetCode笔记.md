@@ -677,3 +677,217 @@ public boolean searchMatrix(int[][] matrix, int target) {
   - 观察规律有：当元素为矩阵中最右上角的数时，该数是其所在列中最小的数，也是其所在行中最大的数；
   - 由此，从右上角开始，如果目标值小于右上角的元素，则其所在列前移，如果目标值大于右上角的元素，则其所在行下移；
   - 时间复杂度：$O(m + n)$, m 和 n 是行和列的维度；空间复杂度：$O(1)$；
+
+
+
+### 769. 最多能完成排序的块
+
+>数组arr是[0, 1, ..., arr.length - 1]的一种排列，我们将这个数组分割成几个“块”，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。
+>
+>我们最多能将数组分成多少块？
+>
+>示例 1:
+>
+>输入: arr = [4,3,2,1,0]
+>输出: 1
+>解释:
+>将数组分成2块或者更多块，都无法得到所需的结果。
+>例如，分成 [4, 3], [2, 1, 0] 的结果是 [3, 4, 0, 1, 2]，这不是有序的数组。
+>示例 2:
+>
+>输入: arr = [1,0,2,3,4]
+>输出: 4
+>解释:
+>我们可以把它分成两块，例如 [1, 0], [2, 3, 4]。
+>然而，分成 [1, 0], [2], [3], [4] 可以得到最多的块数。
+>注意:
+>
+>arr 的长度在 [1, 10] 之间。
+>arr[i]是 [0, 1, ..., arr.length - 1]的一种排列。
+>
+
+- 解法：
+
+```java
+class Solution {
+    public int maxChunksToSorted(int[] arr) {
+        int max = 0, ans = 0;
+        for(int i = 0; i < arr.length; ++i) {
+            max = Math.max(max, arr[i]);
+            if(max == i) {
+                ++ans;
+            }
+        }
+        return ans;
+    }
+}
+```
+
+- 思路：
+  - 题意理解是关键，数列是[0, i]间的一种排列，也就是说，数字是连续的，只是排列方式不同。
+  - 由此，每个元素的位置即是固定的，如，数字1，在数列中对应的下标一定是1，即如果数字1是一个分割点可以切下，则其前面的块中必须有一个数字0且只能有一个数字0，这样完成排序后才不会对后面的序列造成影响。
+  - 由此可得，某个区间能被完整切下的前提：该区间内的最大数的值等于下标i，则可在i处完成切割。
+  - 时间复杂度：$O(n)$； 空间复杂度：$O(1)$;
+
+
+
+### 768. 最多能完成排序的块II
+
+>这个问题和“最多能完成排序的块”相似，但给定数组中的元素可以重复，输入数组最大长度为2000，其中的元素最大为10**8。
+>
+>arr是一个可能包含重复元素的整数数组，我们将这个数组分割成几个“块”，并将这些块分别进行排序。之后再连接起来，使得连接的结果和按升序排序后的原数组相同。
+>
+>我们最多能将数组分成多少块？
+>
+>示例 1:
+>
+>输入: arr = [5,4,3,2,1]
+>输出: 1
+>解释:
+>将数组分成2块或者更多块，都无法得到所需的结果。
+>例如，分成 [5, 4], [3, 2, 1] 的结果是 [4, 5, 1, 2, 3]，这不是有序的数组。 
+>示例 2:
+>
+>输入: arr = [2,1,3,4,4]
+>输出: 4
+>解释:
+>我们可以把它分成两块，例如 [2, 1], [3, 4, 4]。
+>然而，分成 [2, 1], [3], [4], [4] 可以得到最多的块数。 
+>注意:
+>
+>arr的长度在[1, 2000]之间。
+>arr[i]的大小在[0, 10**8]之间。
+>
+
+- 解法一：
+
+```java
+class Solution {
+    public int maxChunksToSorted(int[] arr) {
+        int[] res = Arrays.copyOf(arr, arr.length);
+        Arrays.sort(res);
+
+        int ans = 0;
+        int sum1 = 0, sum2 = 0;
+        for(int i = 0; i < arr.length; ++i) {
+            sum1 += arr[i];
+            sum2 += res[i];
+            if(sum1 == sum2) ++ans;
+        }
+        return ans;
+    }
+}
+```
+
+- 思路：
+  - 最终完成排序的方法是唯一的，故，先直接做排序。排序后的数组的特点：数字与原数组相同，但是位置不同，区间分块后，区间内的元素个数必然相同，数字也必然相同，则其数字之和也必然相同，故依次求出排序后数组和原数组各个位置上元素的累加和，若两个数组的累加和在位置i处相同，则说明位置i是一个分割点；
+- 解法二：
+
+```java
+class Solution {
+    public int maxChunksToSorted(int[] arr) {
+        int[] max = new int[arr.length];
+        max[0] = arr[0];
+        for(int i = 1; i < arr.length; ++i) {
+            max[i] = Math.max(arr[i], max[i - 1]);
+        }
+        
+        int ans = 0, min = Integer.MAX_VALUE;
+        for(int j = arr.length - 1; j >=0; --j) {
+            if(min >= max[j]) {
+                ++ans;
+            }
+            min = Math.min(min, arr[j]);
+        }
+        return ans;
+    }
+}
+>input:[2,1,3,4,4]
+cmin：MAX max: 4 i: 4
+cmin：4 max: 4 i: 3
+cmin：4 max: 3 i: 2
+cmin：3 max: 2 i: 1
+cmin：1 max: 2 i: 0
+```
+
+- 思路：
+  - 能完成分块的前提是，分块区间内的最大元素小于下一个分块区间的开始元素；
+  - 故：正向遍历数组，分别求出各自位置上对应的最大元素，存在新数组中max，从后往前反向遍历原数组，记录下最小值min，并不断与当前的最大值进行比较，选出满足条件的分段点。
+
+
+
+### 763. 划分字母区间
+
+>字符串 S 由小写字母组成。我们要把这个字符串划分为尽可能多的片段，同一个字母只会出现在其中的一个片段。返回一个表示每个字符串片段的长度的列表。
+>
+>示例 1:
+>
+>输入: S = "ababcbacadefegdehijhklij"
+>输出: [9,7,8]
+>解释:
+>划分结果为 "ababcbaca", "defegde", "hijhklij"。
+>每个字母最多出现在一个片段中。
+>像 "ababcbacadefegde", "hijhklij" 的划分是错误的，因为划分的片段数较少。
+>注意:
+>
+>S的长度在[1, 500]之间。
+>S只包含小写字母'a'到'z'。
+>
+
+- 解法：
+
+```java
+class Solution {
+    public List<Integer> partitionLabels(String S) {
+        int[] temp = new int[26];
+        for(int i = 0; i < S.length(); ++i) {
+            temp[S.charAt(i) - 'a'] = i;
+        }
+        
+        List<Integer> result = new ArrayList<>();
+        int start = 0, end = 0;
+        for(int j = 0; j <S.length(); ++j) {
+            end = Math.max(end, temp[S.charAt(j) - 'a']);
+            if(end == j) {
+                result.add(end - start + 1);
+                start = end + 1;
+            }
+        }
+        return result;
+    }
+}
+>input:"ababcbacadefegdehijhklij"
+s: a end: 8 j: 0
+s: b end: 8 j: 1
+s: a end: 8 j: 2
+s: b end: 8 j: 3
+s: c end: 8 j: 4
+s: b end: 8 j: 5
+s: a end: 8 j: 6
+s: c end: 8 j: 7
+s: a end: 8 j: 8
+ADD __________________
+s: d end: 14 j: 9
+s: e end: 15 j: 10
+s: f end: 15 j: 11
+s: e end: 15 j: 12
+s: g end: 15 j: 13
+s: d end: 15 j: 14
+s: e end: 15 j: 15
+ADD __________________
+s: h end: 19 j: 16
+s: i end: 22 j: 17
+s: j end: 23 j: 18
+s: h end: 23 j: 19
+s: k end: 23 j: 20
+s: l end: 23 j: 21
+s: i end: 23 j: 22
+s: j end: 23 j: 23
+ADD __________________
+```
+
+- 思路：
+  - 贪心算法：遍历字符串两次；
+  - 第一次遍历：记下各个字符最后一次出现的位置；
+  - 第二次遍历：完成划分：划分点的选择：遍历字符串，同时记录下遍历过程中各元素对应位置的最大值，当j等于最大值end时，说明已到达划分点，完成划分；
+  - 时间复杂度：$O(n)$； 空间复杂度：26
