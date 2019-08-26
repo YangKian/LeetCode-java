@@ -1,3 +1,5 @@
+import java.util.Stack;
+
 public class n234_Palindrome_Linked_List {
 
     public static class ListNode {
@@ -6,6 +8,7 @@ public class n234_Palindrome_Linked_List {
        ListNode(int x) { val = x; }
  }
 
+    //解法一：链表反向，Time：O(n); Space：O(1)
     public boolean isPalindrome(ListNode head) {
         if(head == null || head.next == null) return true;
 
@@ -40,5 +43,22 @@ public class n234_Palindrome_Linked_List {
             head = next;
         }
         return pre;
+    }
+
+    //解法二：辅助栈，Time：O(n); Space：O(n)
+    public boolean isPalindrome1(ListNode head) {
+        if(head == null || head.next == null) return true;
+
+        Stack<Integer> stack = new Stack<>();
+        for(ListNode p = head; p != null; p = p.next) {
+            stack.push(p.val);
+        }
+
+        for(ListNode p = head; p != null; p = p.next) {
+            if(p.val != stack.pop()) {
+                return false;
+            }
+        }
+        return true;
     }
 }
