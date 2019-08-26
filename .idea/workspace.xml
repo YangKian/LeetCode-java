@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/LeetCode笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/note/LeetCode笔记.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -36,7 +35,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../../java/ReadingGroup" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
@@ -102,7 +101,8 @@
       <workItem from="1566615015996" duration="131000" />
       <workItem from="1566627784605" duration="2354000" />
       <workItem from="1566647332063" duration="383000" />
-      <workItem from="1566701567470" duration="5086000" />
+      <workItem from="1566701567470" duration="5863000" />
+      <workItem from="1566821293778" duration="1559000" />
     </task>
     <servers />
   </component>
