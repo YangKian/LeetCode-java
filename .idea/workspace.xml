@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/n101_Symmetric_Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n101_Symmetric_Tree.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +105,9 @@
       <workItem from="1566701567470" duration="5863000" />
       <workItem from="1566821293778" duration="2368000" />
       <workItem from="1566874625513" duration="1430000" />
-      <workItem from="1566901587474" duration="248000" />
+      <workItem from="1566901587474" duration="904000" />
+      <workItem from="1566961313336" duration="2784000" />
+      <workItem from="1566987305176" duration="702000" />
     </task>
     <servers />
   </component>
