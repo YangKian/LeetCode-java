@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/n101_Symmetric_Tree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/n101_Symmetric_Tree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note/LeetCode笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/note/LeetCode笔记.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +51,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.n768_Max_Chunks_To_Make_Sorted_II">
+  <component name="RunManager" selected="Application.n268_Missing_Number">
+    <configuration name="n268_Missing_Number" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="n268_Missing_Number" />
+      <module name="java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="n763_Partition_Labels" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="n763_Partition_Labels" />
       <module name="java" />
@@ -68,6 +75,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.n268_Missing_Number" />
         <item itemvalue="Application.n768_Max_Chunks_To_Make_Sorted_II" />
         <item itemvalue="Application.n763_Partition_Labels" />
       </list>
@@ -107,7 +115,9 @@
       <workItem from="1566874625513" duration="1430000" />
       <workItem from="1566901587474" duration="904000" />
       <workItem from="1566961313336" duration="2784000" />
-      <workItem from="1566987305176" duration="702000" />
+      <workItem from="1566987305176" duration="1348000" />
+      <workItem from="1567051816318" duration="3641000" />
+      <workItem from="1567066152873" duration="506000" />
     </task>
     <servers />
   </component>
