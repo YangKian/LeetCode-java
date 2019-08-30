@@ -950,4 +950,62 @@ class Solution {
 
     
 
-    
+### 24.两两交换链表中的节点
+
+>给定一个链表，两两交换其中相邻的节点，并返回交换后的链表。
+>
+>你不能只是单纯的改变节点内部的值，而是需要实际的进行节点交换。
+>
+> 
+>
+>示例:
+>
+>给定 1->2->3->4, 你应该返回 2->1->4->3.
+>
+
+- 解法一：迭代法：
+
+```java
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        ListNode pre = new ListNode(0);
+        pre.next = head;
+        ListNode temp = pre;
+        
+        while(temp.next != null && temp.next.next != null) {
+            ListNode start = temp.next;
+            ListNode end = temp.next.next;
+            temp.next = end;
+            start.next = end.next;
+            end.next = start;
+            temp = start;            
+        }
+        return pre.next;
+    }
+}
+```
+
+- 思路：
+  - ![avatar](pic\24题.png)
+  - 时间复杂度：$O(n)$；空间复杂度：$O(1)$
+- 解法二：递归
+
+```java
+class Solution {
+    public ListNode swapPairs(ListNode head) {
+        if(head == null || head.next == null) {
+            return head;
+        }
+        ListNode next = head.next;
+        head.next = swapPairs(next.next);
+        next.next = head;
+        return next;
+    }
+}
+```
+
+- 思路：
+  - 最小单元：两个相邻节点，调用完成后，head指向后续已经完成交换的链表，next指向head；
+  - 终止条件：head为空（当前结点为空）或head.next为空（只剩最后一个结点）；
+  - 返回值：返回已经完成交换的链表；
+
