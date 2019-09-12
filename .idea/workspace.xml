@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="ae273ba0-9223-4a31-9a23-252c59084856" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note/LeetCode笔记.md" beforeDir="false" afterPath="$PROJECT_DIR$/note/LeetCode笔记.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +121,11 @@
       <workItem from="1567421475236" duration="688000" />
       <workItem from="1567510702632" duration="647000" />
       <workItem from="1567512521434" duration="2125000" />
-      <workItem from="1567575459172" duration="1368000" />
+      <workItem from="1567575459172" duration="1411000" />
+      <workItem from="1567918945147" duration="2074000" />
+      <workItem from="1568189569759" duration="690000" />
+      <workItem from="1568269750745" duration="8000" />
+      <workItem from="1568281876144" duration="935000" />
     </task>
     <servers />
   </component>
